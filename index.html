@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网抑云音乐</title>
+    <script src="./font/iconfont.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="shortcut icon" href="#" />
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script>
+        let windowWidth = document.documentElement.scrollWidth || document.body.scrollWidth;
+        if(windowWidth <= 1024){
+            location.href = "phone/index.html"
+        }
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="hidder">
+            <div class="hid">
+                <span>网抑云音乐</span>
+                <div id="serch">
+                    <input type="text" v-model="query" @keyup.enter="searchMusic">
+                    <i class="iconfont icon-sousuo"></i>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <ul class="ul1">
+                <li v-for="item in musicList">
+                    <svg class="icon" aria-hidden="true" @click="playMusic(item.id)">
+                        <use xlink:href="#icon-bofang"></use>
+                    </svg>
+                    <span class="span1" @click="playMusic(item.id)" v-cloak>{{ item.name }}</span>
+                    <svg id="svg" class="icon" aria-hidden="true" @click="showMv(item.mvid)" v-show="item.mvid!=0">
+                        <use xlink:href="#icon-MV"></use>
+                    </svg>
+                </li>
+            </ul>
+            <div id="cd">
+                <div id="gan" :class={gan1:isplaying}></div>
+                <div class="pan" :class={rotate:isplaying}>
+                    <img :src="musicCover" alt="">
+                </div>
+                <div id="musicName" v-cloak >
+                    正在播放：{{ name }}
+                </div>
+            </div>
+            <div id="comment">
+                <div class="hot" v-cloak>热门留言</div>
+                <ul>
+                    <li v-for="com in comment">
+                        <div class="username">
+                            <img :src="com.user.avatarUrl">
+                            <span v-cloak>{{ com.user.nickname }}</span>
+                        </div>
+                        <div class="text" v-cloak>
+                            {{com.content}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <audio :src="musicUrl" controls loop autoplay @play="play" @pause="pause"></audio>
+        <div id="mv" style="display: none;" v-show="playMv">
+            <video :src="mv" controls></video>
+            <div @click="delmv">x</div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jq.js"></script>
+</body>
+
+</html>

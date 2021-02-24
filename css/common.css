@@ -1,0 +1,264 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  
+  
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  
+  ul {
+      list-style: none;
+  }
+  img{
+      display: block;
+  }
+  
+  body {
+      height: 100%;
+  }
+  
+  #main {
+      width: 100%;
+      height: 752px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .rotate{
+      animation: rotate 30s infinite linear;
+  }
+  @keyframes rotate {
+      0%{transform: rotate(0)}
+      100%{transform: rotate(360deg)}
+  }
+  #hidder span{
+      font-size: 25px;
+      color: #ffffff;
+      line-height: 50px;
+      float: left;
+  }
+  #main #serch{
+      float: left;
+      width: 220px;
+      height: 25px;
+      background: #a82828;
+      border-radius: 25px;
+      overflow: hidden;
+      color: #ffffff;
+  }
+  #serch input{
+      width: 180px;
+      height: 20px;
+      border: none;
+      background: #a82828;
+      margin-left: 10px;
+      outline: none;
+      color: #ffffff;
+      font-size: 12px;
+      
+      
+  }
+  #serch i{
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+  }
+  
+  #hidder {
+      width: 100%;
+      height: 50px;
+      background-color: #c62f2f;
+  }
+  #hidder .hid{
+      width: 500px;
+      height: 100%;
+      display: flex;
+      margin-left: 20px;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  #body {
+      width: 100%;
+      flex-grow: 1;
+      height: 500px;
+      background-color: #e4e4e6;
+      display: flex;
+      justify-content: space-between;
+  
+  }
+  #body .ul1{
+      width: 400px;
+      height: 100%;
+      margin-left: 20px;
+      overflow: auto;
+  }
+  #body .ul1 li{
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+      line-height: 30px;
+      font-size: 14px;
+      overflow: hidden;
+  }
+  #body .ul1 li:hover{
+      background: #cccccc;
+  }
+  #body .ul1 li svg{
+      width: 80px;
+      cursor: pointer;
+      margin-top: 7px;
+  }
+  #body .ul1 li .span1{
+      width: 200px;
+      overflow: hidden;
+      cursor: pointer;
+  
+  }
+  
+  #cd{
+      flex-grow: 1;
+      border-left: 1px solid #c3c3c3;
+      border-right: 1px solid #c3c3c3;
+      position: relative;
+  }
+  #cd .pan{
+      width: 388px;
+      height: 388px;
+      background: url(../img/cd.png) no-repeat;
+      overflow: hidden;
+      margin:80px auto;
+      
+     
+  }
+  #cd .pan img{
+      width: 275px;
+      height: 275px;
+      border-radius: 50%;
+      margin: 60px auto;
+      overflow: hidden;
+  }
+  #comment{
+      width: 500px;
+      overflow: auto;
+  
+  }
+  
+  #comment .hot{
+      width: 300px;
+      height: 50px;
+      padding: 10px;
+      line-height: 50px;
+      font-size: 20px;
+      color: #636262;
+      overflow: hidden;
+      
+  }
+  #comment ul{
+      width: 450px;
+      
+  }
+  #comment ul li{
+      width: 100%;
+      min-height: auto;
+      border-top: 1px solid #c3c3c3;
+      padding: 15px;
+  }
+  #comment .username{
+      width: 300px;
+      height: 50px;
+      display: flex;
+      color: #537bb4;
+      font-size: 14px;
+  }
+  #comment .username img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+  #comment .text{
+      font-size: 12px;
+      padding-top: 10px;
+      padding-left: 50px;
+  }
+  
+  
+  audio {
+      width: 100%;
+      height: 60px;
+      outline: none;
+      background-color: #e4e4e6;
+  }
+  
+  #gan{
+      width: 167px;
+      height: 65px;
+      position: absolute;
+      left: 40%;top: 0px;
+      background: url(../img/cd1.png);  
+      z-index: 20;
+  }
+  .gan1{
+      animation: gan1 1s linear;
+      animation-fill-mode: forwards;
+      transform-origin: center left;
+  }
+  @keyframes gan1{
+      0%{transform:rotate(0);}
+      100%{transform:rotate(25deg);}
+  }
+  .gan2{
+      animation: gan2 1s linear;
+      animation-fill-mode: forwards;
+      transform-origin: center left;
+  }
+  @keyframes gan2{
+      0%{transform:rotate(0);}
+      100%{transform:rotate(-25deg);}
+  }
+  
+  #svg{
+      z-index: 10;
+      width: 20px;
+      height: 20px;
+  }
+  #mv{ 
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;top: 0;
+      background: #cccccc;
+      z-index: 100;
+  }
+  #mv video{
+      position: relative;
+      width: 800px;
+      height: 500px;
+      margin: 100px 330px;
+      outline:none;
+  }
+  #mv div{
+      position: fixed;
+      right: 20px;top: 20px;
+      font-size: 40px;
+      cursor: pointer;
+  }
+  
+  #musicName{
+      width: 100%;
+      text-align: center;
+  }
+  
+  .ul1::-webkit-scrollbar{width: 2px;}
+  .ul1::-webkit-scrollbar-thumb{border-radius: 100%;background: rgb(155, 153, 153);}
+  .ul1::-webkit-scrollbar-track{background-color: #dedede;box-shadow: inset 0 0 5px gary;}
+  
+  #comment::-webkit-scrollbar{width: 5px;}
+  #comment::-webkit-scrollbar-thumb{background: rgb(155, 153, 153);}
+  #comment::-webkit-scrollbar-track{background-color: #dedede;box-shadow: inset 0 0 5px gary;}
